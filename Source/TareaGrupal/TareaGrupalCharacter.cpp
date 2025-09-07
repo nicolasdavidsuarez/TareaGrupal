@@ -48,6 +48,12 @@ ATareaGrupalCharacter::ATareaGrupalCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+	ComponenteSalud = CreateDefaultSubobject<UComponenteSalud>(TEXT("ComponenteSalud"));
+}
+
+void ATareaGrupalCharacter::RecibirDanio_Implementation(int danio)
+{
+	ComponenteSalud->RecibirDanio(danio);
 }
 
 void ATareaGrupalCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

@@ -5,11 +5,14 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "ComponenteSalud.h"
+#include "PlayerInterface.h"
 #include "TareaGrupalCharacter.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
 class UInputAction;
+class ComponenteSalud;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
@@ -19,7 +22,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
  *  Implements a controllable orbiting camera
  */
 UCLASS(abstract)
-class ATareaGrupalCharacter : public ACharacter
+class ATareaGrupalCharacter : public ACharacter, public IPlayerInterface
 {
 	GENERATED_BODY()
 
@@ -30,6 +33,7 @@ class ATareaGrupalCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
+
 	
 protected:
 
@@ -53,6 +57,13 @@ public:
 
 	/** Constructor */
 	ATareaGrupalCharacter();	
+	 
+	//interface
+	virtual void RecibirDanio_Implementation(int danio) override;
+	
+	//componente de salud
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components")
+	UComponenteSalud* ComponenteSalud;
 
 protected:
 
