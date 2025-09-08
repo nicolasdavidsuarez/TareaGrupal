@@ -21,7 +21,7 @@ void AItenRecolectable::NotifyActorBeginOverlap(AActor* OtherActor)
 	{
 		Super::mostrarMensaje(mensaje);
 		
-		//IPlayerInterface:
+		IPlayerInterface::Execute_RecoletarItem(OtherActor,cantidad);
 		Destroy();
 	}
 

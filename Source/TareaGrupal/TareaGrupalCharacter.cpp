@@ -56,11 +56,13 @@ ATareaGrupalCharacter::ATareaGrupalCharacter()
 void ATareaGrupalCharacter::RecibirDanio_Implementation(int danio)
 {
 	ComponenteSalud->RecibirDanio(danio);
+	Execute_ActualizaHub(this);
 }
 
 void ATareaGrupalCharacter::RecoletarItem_Implementation(int cant)
 {
 	CantidadDeItems+=cant;
+	Execute_ActualizaHub(this);
 }
 
 

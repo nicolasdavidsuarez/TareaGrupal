@@ -64,6 +64,7 @@ public:
 	virtual void RecibirDanio_Implementation(int danio) override;
 	virtual void RecoletarItem_Implementation(int cant);
 	
+	
 	//componente de salud
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components")
 	UComponenteSalud* ComponenteSalud;

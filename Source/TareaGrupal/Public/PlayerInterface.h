@@ -7,7 +7,7 @@
 #include "PlayerInterface.generated.h"
 
 // This class does not need to be modified.
-UINTERFACE(MinimalAPI)
+UINTERFACE(Blueprintable)
 class UPlayerInterface : public UInterface
 {
 	GENERATED_BODY()
@@ -23,8 +23,12 @@ class TAREAGRUPAL_API IPlayerInterface
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 	UFUNCTION(Blueprintcallable, BlueprintNativeEvent, Category = "Player Interface")
-
 	void RecibirDanio(int Danio);
+	
+	UFUNCTION(Blueprintcallable, BlueprintNativeEvent, Category = "Player Interface")
 	void RecoletarItem(int cant);
 
+	UFUNCTION(Blueprintcallable,BlueprintImplementableEvent, Category = "Player Interface")
+	void ActualizaHub();
+	
 };
