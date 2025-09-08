@@ -19,12 +19,14 @@ class TAREAGRUPAL_API AItenBase : public AActor
 	GENERATED_BODY()
 	
 public:	
-	FString mensaje = "Has tocado un item";
+	
 	// Sets default values for this actor's properties
 	AItenBase();
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
+	FString mensaje = "Mensaje componente base";
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<USphereComponent> SphereCollision;

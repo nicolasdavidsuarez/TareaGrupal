@@ -2,15 +2,25 @@
 
 
 #include "ItenDanio.h"
+#include "PlayerInterface.h"
+
+AItenDanio::AItenDanio()
+{
+	mensaje = "Recibes danio";
+	danio = 10;
+}
 
 void AItenDanio::NotifyActorBeginOverlap(AActor* OtherActor)
 {
 	//Super::NotifyActorBeginOverlap(OtherActor);
-	mensaje = TEXT("Has recibido %d puntos de daño"), danio;
+	
+    // Reemplaza la lï¿½nea problemï¿½tica por la siguiente para evitar el error de nueva lï¿½nea en la constante
+   
 	if (OtherActor->Implements<UPlayerInterface>())
 	{
 		Super::mostrarMensaje(mensaje);
-		// IPlayerInterface::Execute_RecibirDanio(OtherActor);
+		//
+		 IPlayerInterface::Execute_RecibirDanio(OtherActor,danio);
 	}
 
 }

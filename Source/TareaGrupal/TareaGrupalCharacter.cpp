@@ -14,6 +14,8 @@
 
 ATareaGrupalCharacter::ATareaGrupalCharacter()
 {
+
+	CantidadDeItems=0;
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 		
@@ -55,6 +57,12 @@ void ATareaGrupalCharacter::RecibirDanio_Implementation(int danio)
 {
 	ComponenteSalud->RecibirDanio(danio);
 }
+
+void ATareaGrupalCharacter::RecoletarItem_Implementation(int cant)
+{
+	CantidadDeItems+=cant;
+}
+
 
 void ATareaGrupalCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {

@@ -23,6 +23,8 @@ class TAREAGRUPAL_API IPlayerInterface
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 	UFUNCTION(Blueprintcallable, BlueprintNativeEvent, Category = "Player Interface")
+
 	void RecibirDanio(int Danio);
+	void RecoletarItem(int cant);
 
 };

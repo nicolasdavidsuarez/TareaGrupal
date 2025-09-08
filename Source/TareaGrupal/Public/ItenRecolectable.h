@@ -13,5 +13,11 @@ UCLASS()
 class TAREAGRUPAL_API AItenRecolectable : public AItenBase
 {
 	GENERATED_BODY()
-	
+public:
+
+	AItenRecolectable();	
+
+	FString mensaje="Recolectaste";
+	int cantidad;
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 };

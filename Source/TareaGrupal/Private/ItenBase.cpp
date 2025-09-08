@@ -39,7 +39,7 @@ void AItenBase::mostrarMensaje(FString msg)
 
 void AItenBase::NotifyActorBeginOverlap(AActor* OtherActor)
 {
-	//Super::NotifyActorBeginOverlap(OtherActor);
+	Super::NotifyActorBeginOverlap(OtherActor);
 
 	if (OtherActor->Implements<UPlayerInterface>())
 	{

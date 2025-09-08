@@ -14,8 +14,13 @@ class TAREAGRUPAL_API AItenDanio : public AItenBase
 {
 	GENERATED_BODY()
 public:
-	FString mensaje;
+
+	AItenDanio();
+
+	FString mensaje = "Recibes danio";
+	
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Props")
 	int danio = 10;
 };
